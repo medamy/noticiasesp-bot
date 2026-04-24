@@ -12,7 +12,7 @@ print("Scheduler iniciado. Esperando horas programadas...")
 while True:
     ahora = datetime.now(ZONA)
     clave = (ahora.date(), ahora.hour)
-if ahora.hour in HORAS_EJECUCION and clave not in ejecuciones_realizadas:
+    if ahora.hour in HORAS_EJECUCION and clave not in ejecuciones_realizadas:
         print(f"{ahora.strftime('%Y-%m-%d %H:%M')} Generando video...")
         subprocess.run(["python", "video.py"])
         ejecuciones_realizadas.add(clave)
